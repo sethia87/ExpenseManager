@@ -2,16 +2,16 @@
 using ExpenseManager.ViewModel.Tabs;
 
 namespace ExpenseManager.View.Tabs
-{ 
+{
     /// <summary>
-    /// Interaction logic for MobileExpense.xaml
+    /// Interaction logic for YearlyExpensesView.xaml
     /// </summary>
-    public partial class MobileExpenseView : UserControl
+    public partial class YearlyExpensesView : UserControl
     {
-        public MobileExpenseView()
+        public YearlyExpensesView()
         {
             InitializeComponent();
-            this.DataContext = new MobileExpenseViewModel();
+            this.DataContext = new YearlyExpensesViewModel();
         }
     }
 }
