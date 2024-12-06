@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="ExpenseManager.View.Start.StartView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpenseManager" 
+        xmlns:tabs="clr-namespace:ExpenseManager.View.Tabs"
+             mc:Ignorable="d" Width="Auto" Height="Auto">
+    <Grid>
+        <TabControl>
+            <!-- First Tab -->
+            <TabItem Header="Mobile &amp; Broadband Expenses">
+                <StackPanel Margin="10">
+                    <tabs:MobileExpenseView/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Second Tab -->
+            <TabItem Header="Monthly Expenses">
+                <StackPanel Margin="10">
+                    <TextBlock Text="Adjust your settings here." FontSize="16" Margin="0,0,0,10"/>
+                    <CheckBox Content="Enable Feature" IsChecked="True"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Third Tab -->
+            <TabItem Header="Medicine Expenses">
+                <StackPanel Margin="10">
+                    <TextBlock Text="About this application:" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="This is a simple WPF application demonstrating TabControl." TextWrapping="Wrap"/>
+                </StackPanel>
+            </TabItem>
+
+
+
+            <!-- Fourth Tab -->
+
+            <TabItem Header="Teacher-Coach Expenses">
+                <StackPanel Margin="10">
+                    <TextBlock Text="About this application:" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="This is a simple WPF application demonstrating TabControl." TextWrapping="Wrap"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Fifth Tab -->
+            <TabItem Header="School Expenses">
+                <StackPanel Margin="10">
+                    <TextBlock Text="About this application:" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="This is a simple WPF application demonstrating TabControl." TextWrapping="Wrap"/>
+                </StackPanel>
+            </TabItem>
+
+
+            <!-- Sixth Tab -->
+            <TabItem Header="Credit Card Expenses">
+                <StackPanel Margin="10">
+                    <TextBlock Text="About this application:" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="This is a simple WPF application demonstrating TabControl." TextWrapping="Wrap"/>
+                </StackPanel>
+            </TabItem>
+
+
+            <!-- Seventh Tab -->
+            <TabItem Header="Yearly Expenses">
+                <StackPanel Margin="10">
+                    <TextBlock Text="About this application:" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="This is a simple WPF application demonstrating TabControl." TextWrapping="Wrap"/>
+                </StackPanel>
+            </TabItem>
+
+
+            <!-- Eight Tab -->
+            <TabItem Header="Quaterly Expenses">
+                <StackPanel Margin="10">
+                    <TextBlock Text="About this application:" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="This is a simple WPF application demonstrating TabControl." TextWrapping="Wrap"/>
+                </StackPanel>
+            </TabItem>
+
+            <!-- Ningth Tab -->
+            <TabItem Header="Online Expenses">
+                <StackPanel Margin="10">
+                    <TextBlock Text="About this application:" FontSize="16" Margin="0,0,0,10"/>
+                    <TextBlock Text="This is a simple WPF application demonstrating TabControl." TextWrapping="Wrap"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
