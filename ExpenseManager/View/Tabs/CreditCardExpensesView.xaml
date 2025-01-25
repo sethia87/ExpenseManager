@@ -3,10 +3,78 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ExpenseManager.View.Tabs"
+             xmlns:local="clr-namespace:ExpenseManager.View.Tabs" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <TextBlock Text="Credit Card Expense Tracker" FontSize="24" FontWeight="Bold" />
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" Name="CreditCardExpenseDataGrid" AutoGenerateColumns="False" 
+                  CanUserAddRows="True" CanUserDeleteRows="True" Margin="10" 
+                  ItemsSource="{Binding CreditCardExpenses}" 
+                  IsReadOnly="False">
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Card Name" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=CardName}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding DataContext.CardNameList, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                      SelectedItem="{Binding Path=CardName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                      SelectedIndex="0"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn Header="Due Date" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DueDate, StringFormat={}{0:yyyy-MM-dd}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <DatePicker SelectedDate="{Binding Path=DueDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                
+                <DataGridTextColumn Header="Description" Binding="{Binding Path=Description, Mode=TwoWay, 
+                    UpdateSourceTrigger=PropertyChanged}" Width="*" />
+                
+                <DataGridTextColumn Header="Category" Binding="{Binding Path=Category, Mode=TwoWay, 
+                    UpdateSourceTrigger=PropertyChanged}" Width="*" />
+                
+                <DataGridTextColumn Header="Amount" Binding="{Binding Path=Amount, Mode=TwoWay, 
+                    UpdateSourceTrigger=PropertyChanged}" Width="*" />
+            </DataGrid.Columns>
+          
+        </DataGrid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+                    Margin="10">
+            <Button Content="Save Changes" Width="100" Margin="5" 
+                    Command="{Binding Path=SaveChangesCommand}"/>
+        </StackPanel>
     </Grid>
 </UserControl>
+
+
+
+
+

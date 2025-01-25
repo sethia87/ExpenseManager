@@ -44,11 +44,11 @@ namespace ExpenseManager.ViewModel
         {
             _currentView = new HomeView();
             MonthYearVisibility = Visibility.Visible;
-            NavigateCommand = new RelayCommand((x) => { Navigate(); }, (y) => { return CanExecute(); });
+            NavigateCommand = new RelayCommand(Navigate);
         }
 
         #region Methods
-        private void Navigate()
+        private void Navigate(object obj)
         {
             MonthYearVisibility = Visibility.Collapsed;
             CurrentView = new StartView();
